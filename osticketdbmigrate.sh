@@ -1,8 +1,10 @@
 #!/bin/bash
-adding a apt-get update on top
+#adding a apt-get update on top
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password demo@pass123'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password demo@pass123'
-sudo apt-get install -y lamp-server
+sudo apt-get install -y lamp-server^
+#sudo apt install tasksel
+#sudo tasksel install lamp-server
 MYSQL=`which mysql`
 Q1="CREATE DATABASE IF NOT EXISTS osticket;"
 Q2="GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION;"
